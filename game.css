@@ -1,0 +1,19 @@
+  html, body {
+    height: 100%;
+    margin: 0;
+    /*background: black;*/
+    background: url("https://cutewallpaper.org/21/pastel-pink-aesthetic-background/Baby-Pink-Backgrounds-Wallpaper-Cave.jpg");
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: url("https://thumbs.dreamstime.com/b/fun-contrast-simple-dynamic-seamless-pattern-white-black-spots-repeatable-motif-abstract-summer-cool-background-stock-vector-134144760.jpg");
+  
+    background: url("https://cdn140.picsart.com/263118911025202.jpg?type=webp&to=min&r=640"); */
+}
+  canvas {
+    border: 1px solid white;
+    background-image: url("https://cdn140.picsart.com/263118911025202.jpg?type=webp&to=min&r=640");
+* 
+}
