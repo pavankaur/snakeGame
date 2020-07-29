@@ -4,13 +4,12 @@ This code handles the game elements and interactions on game.html.
 Most of your work will be here!
 */
 /***INITIALIZING VARIABLES AND OBJECTS***/
-var canvas = document.getElementById('game');
-var context = canvas.getContext('2d');
-var grid = 40;
-var count = 0;
-var score = 0;
-//const scoreDisplay = document.getElementById("score");
-var snake = {
+let canvas = document.getElementById('game');
+let context = canvas.getContext('2d');
+let grid = 40;
+let count = 0;
+let score = 0;
+let snake = {
   x: 160,
   y: 160,
   x_step: grid, //snake velocity. moves one grid length every frame in either the x or y direction
@@ -18,10 +17,9 @@ var snake = {
   cells: [],  //an array that keeps track of all grids the snake body occupies
   currentLength: 4, //current length of the snake. grows when eating an apple. 
   color: '#45b3e0'
-  //color: 'green'
 };
 /* TO DO: create apple object below */
-var apple = {
+let apple = {
   x: 0,
   y:0,
   color: 'blue'
@@ -120,9 +118,6 @@ uses context functions to fill the cell at apple.x and apple.y with apple.color
 */
 function drawApple(){
   /* TO DO */
-//  context.fillStyle = apple.color;
-  //context.fillRect(apple.x, apple.y, grid, grid)
-  // context.fill;
   let img = document.getElementById("apple");
   context.drawImage(img,apple.x, apple.y);
  
@@ -135,13 +130,11 @@ If the cell is the first cell in the array, use the drawCellWithBitmoji function
 */
 function drawSnake(){
   /* TO DO */
-  //console.log(snake.cells);
   for(let i = 0; i < snake.cells.length; i++){
     if(i === 0){
       drawCellWithBitmoji(snake.cells[i]);
     } 
     else{
-      //context.fillstyle = 'green'
       context.fillStyle = snake.color;
       context.fillRect(snake.cells[i].x, snake.cells[i].y, grid, grid);
     }
@@ -166,9 +159,11 @@ function snakeTouchesApple(){
   /* TO DO */
  if(apple.x == snake.cells[0].x && apple.y==snake.cells[0].y)
    {
-      score++;
-      document.getElementById('score').innerHTML = score;
-      score.innerHTML = "Score: " +  context.fillText(score, 700,700);
+      
+     score++;
+     
+     let scoreBoard = document.getElementById('score');
+     scoreBoard.innerText = `Score: ${score}`;
 
      return true;
    }
